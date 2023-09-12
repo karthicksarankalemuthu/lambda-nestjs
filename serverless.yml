@@ -1,0 +1,17 @@
+org: karthicksaran
+app: lamda
+service: lamda
+frameworkVersion: '3'
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: dist/main.handler
+    events:
+      - httpApi: '*'
